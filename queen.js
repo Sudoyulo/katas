@@ -109,11 +109,11 @@ function queenThreat (generateBoard){
   return threat;
 }
 
-let whiteQueen = [3, 0];
-let blackQueen = [3, 5];
-let generatedBoard = generateBoard(whiteQueen, blackQueen);
-console.log(generatedBoard);
-console.log(queenThreat(generatedBoard));
+// let whiteQueen = [3, 0];
+// let blackQueen = [3, 5];
+// let generatedBoard = generateBoard(whiteQueen, blackQueen);
+// console.log(generatedBoard);
+// console.log(queenThreat(generatedBoard));
 
 // let whiteQueen = [0, 0];
 // let blackQueen = [5, 7];
