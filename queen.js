@@ -109,14 +109,17 @@ function queenThreat (generateBoard){
   return threat;
 }
 
-// let whiteQueen = [3, 0];
-// let blackQueen = [3, 5];
-// let generatedBoard = generateBoard(whiteQueen, blackQueen);
-// console.log(generatedBoard);
-// console.log(queenThreat(generatedBoard));
+const util = require("util");
+let whiteQueen = [5, 0];
+let blackQueen = [0, 5];
+let generatedBoard = generateBoard(whiteQueen, blackQueen);
+console.log(util.inspect(generatedBoard,{compact: true}));
+//console.log(generatedBoard);
+console.log(queenThreat(generatedBoard));
 
-// let whiteQueen = [0, 0];
-// let blackQueen = [5, 7];
-// let generatedBoard = generateBoard(whiteQueen, blackQueen);
-// console.log(generatedBoard);
-// console.log(queenThreat(generatedBoard));
+ whiteQueen = [0, 0];
+ blackQueen = [5, 7];
+ generatedBoard = generateBoard(whiteQueen, blackQueen);
+//console.log(generatedBoard);
+console.log(util.inspect(generatedBoard,{compact: true}));
+console.log(queenThreat(generatedBoard));

@@ -8,17 +8,14 @@ function ingredientCheck(bakery,item){
 }
 
 const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-	var solution = [];
 	var insideA = false;
 	var insideB = false;
 
 	for (let i = 0; i < recipes.length; i++){
-		for (let j = 0; j< recipes[i].ingredients.length; j++){
-			insideA = ingredientCheck(bakeryA,recipes[i].ingredients[j]);
-			if (insideA === true) {
+	    for (let j = 0; j< recipes[i].ingredients.length; j++){
+			if (ingredientCheck(bakeryA,recipes[i].ingredients[j])) {
 				for (let k = 0; k< recipes[i].ingredients.length; k++){
-					insideB =  ingredientCheck(bakeryB,recipes[i].ingredients[k]);
-					if (insideB === true){
+					if (ingredientCheck(bakeryB,recipes[i].ingredients[k])){
 						return recipes[i].name;
 					}
 				}
@@ -27,19 +24,17 @@ const chooseRecipe = function(bakeryA, bakeryB, recipes) {
 	}//inside A
 
 
-        for (let i = 0; i < recipes.length; i++){
-                for (let j = 0; j< recipes[i].ingredients.length; j++){
-                        insideB = ingredientCheck(bakeryB,recipes[i].ingredients[j]);
-                        if (insideB === true) {
-                                for (let k = 0; k< recipes[i].ingredients.length; k++){
-                                        insideA =  ingredientCheck(bakeryA,recipes[i].ingredients[k]);
-                                        if (insideA === true){
-                                                return recipes[i].name;
-                                        }
-                                }
-                        }
+    for (let i = 0; i < recipes.length; i++){
+        for (let j = 0; j< recipes[i].ingredients.length; j++){
+            if (ingredientCheck(bakeryB,recipes[i].ingredients[j])) {
+                for (let k = 0; k< recipes[i].ingredients.length; k++){
+                    if (ingredientCheck(bakeryA,recipes[i].ingredients[k])){
+                        return recipes[i].name;
+                    }
                 }
-        }//inside B
+            }
+        }
+    }//inside B
 	return none;
 }
 
