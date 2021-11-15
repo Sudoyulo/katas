@@ -1,41 +1,41 @@
-function ingredientCheck(bakery,item){
-	for (let i = 0; i < bakery.length; i++){
-		if (bakery[i] === item){
-			return true;
-		}
-	}
-	return false;
+function ingredientCheck(bakery, item) {
+    for (let i = 0; i < bakery.length; i++) {
+        if (bakery[i] === item) {
+            return true;
+        }
+    }
+    return false;
 }
 
-const chooseRecipe = function(bakeryA, bakeryB, recipes) {
-	var insideA = false;
-	var insideB = false;
+const chooseRecipe = function (bakeryA, bakeryB, recipes) {
+    var insideA = false;
+    var insideB = false;
 
-	for (let i = 0; i < recipes.length; i++){
-	    for (let j = 0; j< recipes[i].ingredients.length; j++){
-			if (ingredientCheck(bakeryA,recipes[i].ingredients[j])) {
-				for (let k = 0; k< recipes[i].ingredients.length; k++){
-					if (ingredientCheck(bakeryB,recipes[i].ingredients[k])){
-						return recipes[i].name;
-					}
-				}
-			}
-		}
-	}//inside A
+    for (let i = 0; i < recipes.length; i++) {
+        for (let j = 0; j < recipes[i].ingredients.length; j++) {
+            if (ingredientCheck(bakeryA, recipes[i].ingredients[j])) {
+                for (let k = 0; k < recipes[i].ingredients.length; k++) {
+                    if (ingredientCheck(bakeryB, recipes[i].ingredients[k])) {
+                        return recipes[i].name;
+                    }
+                }
+            }
+        }
+    }//inside A
 
 
-    for (let i = 0; i < recipes.length; i++){
-        for (let j = 0; j< recipes[i].ingredients.length; j++){
-            if (ingredientCheck(bakeryB,recipes[i].ingredients[j])) {
-                for (let k = 0; k< recipes[i].ingredients.length; k++){
-                    if (ingredientCheck(bakeryA,recipes[i].ingredients[k])){
+    for (let i = 0; i < recipes.length; i++) {
+        for (let j = 0; j < recipes[i].ingredients.length; j++) {
+            if (ingredientCheck(bakeryB, recipes[i].ingredients[j])) {
+                for (let k = 0; k < recipes[i].ingredients.length; k++) {
+                    if (ingredientCheck(bakeryA, recipes[i].ingredients[k])) {
                         return recipes[i].name;
                     }
                 }
             }
         }
     }//inside B
-	return none;
+    return none;
 }
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];

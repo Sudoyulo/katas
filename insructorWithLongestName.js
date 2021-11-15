@@ -7,9 +7,6 @@ const instructorWithLongestName = function(instructors) {
 		}
 	}
 	return longest;
-
-
-
 };
 
 console.log(instructorWithLongestName([
