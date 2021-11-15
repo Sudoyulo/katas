@@ -4,12 +4,12 @@ function ingredientCheck(bakery, item) {
             return true;
         }
     }
-    return false;
+    return false   ;  
 }
 
 const chooseRecipe = function (bakeryA, bakeryB, recipes) {
     var insideA = false;
-    var insideB = false;
+     var insideB = false;
 
     for (let i = 0; i < recipes.length; i++) {
         for (let j = 0; j < recipes[i].ingredients.length; j++) {
